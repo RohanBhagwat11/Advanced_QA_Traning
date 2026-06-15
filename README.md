@@ -51,11 +51,11 @@
 
 ## Day 2: Reports and Debugging
 
-# 1. Simulate Failures
+## 1. Simulate Failures
 
 Document at least five unique failure categories.
 
-# 2. Simulate Timeouts in Playwright
+## 2. Simulate Timeouts in Playwright
 
 Document three different timeout scenarios.
 
