@@ -1,5 +1,5 @@
 import { Page, Locator } from "@playwright/test";
-
+import {routes} from "../Constants/routes"
 export class BrowserPage {
   readonly page: Page;
   readonly newTabButton: Locator;
@@ -14,7 +14,7 @@ export class BrowserPage {
   }
 
   async goto() {
-    await this.page.goto("https://demoqa.com/browser-windows");
+    await this.page.goto(routes.newWindow);
   }
 
   async openNewTab() {

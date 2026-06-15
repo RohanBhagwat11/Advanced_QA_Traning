@@ -1,3 +1,4 @@
+/*
 import {test, Page, expect} from '@playwright/test'
 
 test('Verify New Tab Button opens a new tab ', async ({ page, context }) => {
@@ -77,3 +78,45 @@ test('Verify new Window Message functionality', async({page, context})=>{
 
 
 })
+
+*/
+
+
+// BrowserWindow.spec.ts
+// Replace the default Playwright import with your custom fixture import
+import { test, expect } from "../fixtures/fixtures"; 
+
+test.describe("Browser Windows Test", () => {
+  
+  // Simply inject 'browserPage' (and 'page' when you need the parent context)
+  test("verify new tab button open new Tab", async ({ browserPage }) => {
+    const newTab = await browserPage.openNewTab();
+    await expect(newTab).toHaveURL("https://demoqa.com/sample");
+  });
+
+  test("Verify content of newly open tab", async ({ browserPage }) => {
+    const newTab = await browserPage.openNewTab();
+
+    await expect(newTab.locator("#sampleHeading")).toHaveText(
+      "This is a sample page",
+    );
+  });
+
+  test("Close child tab and switch back to parent.", async ({ page, browserPage }) => {
+    const childTab = await browserPage.openNewTab();
+    await childTab.close();
+
+    // You can still use the built-in 'page' alongside your custom fixture
+    await page.bringToFront();
+    await expect(page.locator(".text-center")).toHaveText("Browser Windows");
+  });
+
+  test("Verify New Window Message functionality.", async ({ browserPage }) => {
+    const newWindowMsg = await browserPage.openNewWindowMsg();
+    await expect(newWindowMsg.locator("body")).toHaveText(
+      "Knowledge increases by sharing but not by saving. Please share this website with your friends and in your organization.",
+    );
+
+    await newWindowMsg.close();
+  });
+});
