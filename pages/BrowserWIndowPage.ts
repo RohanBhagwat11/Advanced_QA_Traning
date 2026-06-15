@@ -1,5 +1,5 @@
 import { Page, Locator } from "@playwright/test";
-import {routes} from "../Constants/routes"
+import { routes } from "../Constants/routes";
 export class BrowserPage {
   readonly page: Page;
   readonly newTabButton: Locator;
