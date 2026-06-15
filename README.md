@@ -59,5 +59,111 @@ Document at least five unique failure categories.
 
 Document three different timeout scenarios.
 
+------------------------------------------------------------------------
+
+## Prerequisites
+
+Before running the project, ensure the following are installed:
+
+* Node.js (v18 or later recommended)
+* npm (comes with Node.js)
+
+Verify installation:
+
+```bash
+node -v
+npm -v
+```
+
+---
+
+## Project Setup
+
+### Install Dependencies
+
+```bash
+npm install
+```
+
+### Install Playwright Browsers
+
+```bash
+npx playwright install
+```
+
+---
+
+## Test Execution Commands
+
+### Run All Tests
+
+```bash
+npx playwright test
+```
+
+### Run Tests in Headed Mode
+
+```bash
+npx playwright test --headed
+```
+
+### Run Tests in UI Mode
+
+```bash
+npx playwright test --ui
+```
+
+### Show HTML Report
+
+```bash
+npx playwright show-report
+```
+
+### Run Smoke Tests
+
+```bash
+npx playwright test --grep @smoke
+```
+
+### Run Negative Test Cases
+
+```bash
+npx playwright test --grep @negative
+```
+
+### Run a Specific Test File
+
+```bash
+npx playwright test tests/login.spec.ts
+```
+
+---
+
+## Reporting
+
+Generate and view the HTML report:
+
+```bash
+npx playwright show-report
+```
+
+---
+
+## Deliverables
+
+The following artifacts are included as part of the submission:
+
+* Multiple Tab automation tests
+* Network Mocking tests
+* Custom Fixture implementation
+* Fixture-based reusable tests
+* HTML Report snippets
+* Trace Viewer evidence
+* Debugging document covering at least 8 failure categories
+* Updated README 
+
+---
+
+
 
 
