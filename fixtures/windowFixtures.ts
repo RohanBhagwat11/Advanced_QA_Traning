@@ -10,16 +10,14 @@ type MyFixtures = {
 // 2. Extend the base test object
 export const test = base.extend<MyFixtures>({
   browserPage: async ({ page }, use) => {
-    // Instantiate the page object
+  
     const browserPage = new BrowserPage(page);
     
-    // Automatically navigate so the tests don't have to repeat it
     await browserPage.goto();
     
-    // Pass the prepared instance to the test
+ 
     await use(browserPage);
-    
-    // (Optional) Add any teardown logic here if needed after 'use'
+
   },
 });
 
