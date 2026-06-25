@@ -25,8 +25,6 @@ test.describe("Browser Windows Test", () => {
     const childTab = await browserPage.openNewTab();
     await childTab.close();
 
-    await page.bringToFront();
-
     await expect(page.locator(".text-center")).toHaveText("Browser Windows");
   });
 
